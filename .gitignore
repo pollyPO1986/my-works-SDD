@@ -1,0 +1,50 @@
+# 基本設定
+.DS_Store
+.vscode/
+.github/
+Thumbs.db
+
+# 開發相關
+node_modules/
+build/
+dist/
+docs/
+Dockerfile/
+.next/
+
+# 專案 Config 設定
+.env
+
+# npm / yarn / pnpm
+.npm/
+.yarn/cache/
+
+# 日誌
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+pnpm-debug.log*
+
+# 測試和覆蓋率
+coverage/
+.nyc_output/
+*.lcov
+
+# 編譯和構建
+*.tsbuildinfo
+out/
+.turbo/
+
+# IDE
+*.swp
+*.swo
+.vscode-settings.json
+jsconfig.json
+
+# 臨時檔案
+tmp/
+temp/
+*.tmp
+*.bak
