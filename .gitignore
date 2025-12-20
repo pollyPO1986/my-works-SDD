@@ -1,0 +1,13 @@
+# 基本設定
+.DS_Store
+.vscode/
+.github/
+
+# 開發相關
+node_modules/
+build/
+dist/
+Dockerfile/
+
+# 專案 Config 設定
+.env
