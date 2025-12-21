@@ -2,8 +2,9 @@
 
 **特性分支**: `001-portfolio-intro`  
 **建立日期**: 2025-12-21  
+**更新日期**: 2025-12-21  
 **狀態**: 草稿  
-**輸入**: 使用者描述 - 重構個人介紹頁，參考 GitHub repo link: https://github.com/pollyPO1986/works
+**輸入**: 使用者描述 - 重構個人介紹頁，參考 GitHub Pages: https://pollypo1986.github.io/works/
 
 ---
 
