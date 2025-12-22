@@ -2,12 +2,57 @@
 .DS_Store
 .vscode/
 .github/
+.idea/
+*.swp
+*.swo
+Thumbs.db
 
 # 開發相關
 node_modules/
 build/
 dist/
-Dockerfile/
+.next/
+out/
 
 # 專案 Config 設定
 .env
+.env.local
+.env.*.local
+
+# npm / yarn / pnpm
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+.npm/
+.yarn/cache/
+
+# 日誌
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+pnpm-debug.log*
+
+# 測試和覆蓋率
+coverage/
+.nyc_output/
+*.lcov
+
+# 編譯和構建
+*.tsbuildinfo
+out/
+.turbo/
+
+# IDE
+.DS_Store
+*.swp
+*.swo
+.vscode-settings.json
+jsconfig.json
+
+# 臨時檔案
+tmp/
+temp/
+*.tmp
+*.bak
