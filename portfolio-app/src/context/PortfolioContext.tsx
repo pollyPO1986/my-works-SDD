@@ -4,17 +4,17 @@
  * 便於所有組件訪問，無需逐層傳遞 props
  */
 
-import { type ReactNode } from 'react'
-import type { PortfolioState } from '../types/models'
-import { PortfolioContext } from './PortfolioContextDefinition'
-import { personalProfile, portfolioItems, skills } from '../data/portfolio'
+import { type ReactNode } from 'react';
+import type { PortfolioState } from '../types/models';
+import { PortfolioContext } from './PortfolioContextDefinition';
+import { personalProfile, portfolioItems, skills } from '../data/portfolio';
 
 /**
  * PortfolioProvider Props
  */
 interface PortfolioProviderProps {
-  children: ReactNode
-  locale?: 'zh-TW' | 'en'
+  children: ReactNode;
+  locale?: 'zh-TW' | 'en';
 }
 
 /**
@@ -38,12 +38,7 @@ export function PortfolioProvider({
     portfolioItems,
     skills,
     locale,
-  }
+  };
 
-  return (
-    <PortfolioContext.Provider value={value}>
-      {children}
-    </PortfolioContext.Provider>
-  )
+  return <PortfolioContext.Provider value={value}>{children}</PortfolioContext.Provider>;
 }
-

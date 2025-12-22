@@ -16,13 +16,13 @@
  */
 export interface SocialLink {
   /** 平台名稱 */
-  platform: 'linkedin' | 'github' | 'twitter' | 'email'
+  platform: 'linkedin' | 'github' | 'twitter' | 'email';
   /** 完整 URL */
-  url: string
+  url: string;
   /** FontAwesome 圖標名稱（可選，自動推導） */
-  icon?: string
+  icon?: string;
   /** 無障礙標籤（可選，自動推導） */
-  label?: string
+  label?: string;
 }
 
 /**
@@ -42,29 +42,29 @@ export interface SocialLink {
 export interface PersonalProfile {
   // 基本信息
   /** 姓名 [必須] */
-  name: string
+  name: string;
   /** 職位/身份 [必須] */
-  title: string
+  title: string;
   /** 個人簡介 (100-500 字) [必須] */
-  bio: string
+  bio: string;
 
   // 視覺素材
   /** 頭像圖片 URL 或路徑 [必須] */
-  avatar: string
+  avatar: string;
 
   // 下載資源
   /** CV/履歷 PDF URL [必須] */
-  cvUrl: string
+  cvUrl: string;
 
   // 社群連結
   /** 社群媒體連結陣列 [必須] */
-  socialLinks: SocialLink[]
+  socialLinks: SocialLink[];
 
   // 元數據
   /** 最後更新時間 [可選] */
-  updatedAt?: Date
+  updatedAt?: Date;
   /** 內容語言 [可選，預設 'zh-TW'] */
-  locale?: 'zh-TW' | 'en'
+  locale?: 'zh-TW' | 'en';
 }
 
 /**
@@ -83,24 +83,24 @@ export interface PersonalProfile {
 export interface ProjectMetrics {
   performance?: {
     /** Lighthouse 分數 (0-100) */
-    lighthouse?: number
+    lighthouse?: number;
     /** PageSpeed 分數 */
-    pagespeed?: number
+    pagespeed?: number;
     /** First Contentful Paint (ms) */
-    fcp?: number
-  }
+    fcp?: number;
+  };
   accessibility?: {
     /** WCAG 合規等級 */
-    wcagLevel?: 'A' | 'AA' | 'AAA'
-  }
+    wcagLevel?: 'A' | 'AA' | 'AAA';
+  };
   adoption?: {
     /** 用戶數量 */
-    users?: number
+    users?: number;
     /** 下載次數 */
-    downloads?: number
+    downloads?: number;
     /** GitHub Stars */
-    github_stars?: number
-  }
+    github_stars?: number;
+  };
 }
 
 /**
@@ -125,51 +125,51 @@ export interface ProjectMetrics {
 export interface PortfolioItem {
   // 基本識別
   /** 唯一識別碼 (e.g. "proj-001") [必須] */
-  id: string
+  id: string;
   /** 項目名稱 [必須] */
-  title: string
+  title: string;
   /** 項目描述 (100-500 字) [必須] */
-  description: string
+  description: string;
 
   // 視覺素材
   /** 縮圖圖片 URL 或路徑 [必須] */
-  thumbnail: string
+  thumbnail: string;
   /** 額外圖片 URL 陣列 (詳情頁用) [可選] */
-  images?: string[]
+  images?: string[];
 
   // 展示優先級
   /** 是否為精選項目 (首頁展示) [必須] */
-  featured: boolean
+  featured: boolean;
   /** 顯示順序 (升序) [可選] */
-  order?: number
+  order?: number;
 
   // 外部連結
   /** 項目線上網址 [可選] */
-  projectUrl?: string
+  projectUrl?: string;
   /** GitHub 倉庫 URL [可選] */
-  repositoryUrl?: string
+  repositoryUrl?: string;
 
   // 元數據
   /** 技術標籤 (e.g. ["React", "TypeScript"]) [必須] */
-  tags: string[]
+  tags: string[];
   /** 開始日期 (YYYY-MM 格式) [可選] */
-  startDate?: string
+  startDate?: string;
   /** 結束日期 (YYYY-MM 格式) [可選] */
-  endDate?: string
+  endDate?: string;
 
   // 詳細內容
   /** 完整描述 (詳情頁用) [可選] */
-  fullDescription?: string
+  fullDescription?: string;
   /** 亮點特性列表 [可選] */
-  highlights?: string[]
+  highlights?: string[];
   /** 項目成果指標 [可選] */
-  metrics?: ProjectMetrics
+  metrics?: ProjectMetrics;
 
   // 狀態
   /** 項目狀態 [可選] */
-  status?: 'active' | 'archived' | 'in-progress'
+  status?: 'active' | 'archived' | 'in-progress';
   /** 內容語言 [可選] */
-  locale?: 'zh-TW' | 'en'
+  locale?: 'zh-TW' | 'en';
 }
 
 /**
@@ -187,27 +187,27 @@ export interface PortfolioItem {
 export interface Skill {
   // 基本識別
   /** 唯一識別碼 [必須] */
-  id: string
+  id: string;
   /** 技能名稱 [必須] */
-  name: string
+  name: string;
   /** 技能分類 [必須] */
-  category: 'frontend' | 'backend' | 'fullstack' | 'devops' | 'tools' | 'other'
+  category: 'frontend' | 'backend' | 'fullstack' | 'devops' | 'tools' | 'other';
 
   // 熟練度
   /** 技能等級 1-5 (1=初級, 5=專家) [可選，預設 3] */
-  level?: 1 | 2 | 3 | 4 | 5
+  level?: 1 | 2 | 3 | 4 | 5;
   /** 熟練度描述 [可選] */
-  proficiency?: 'Beginner' | 'Intermediate' | 'Advanced' | 'Expert'
+  proficiency?: 'Beginner' | 'Intermediate' | 'Advanced' | 'Expert';
 
   // 關聯項目
   /** 相關項目 ID [可選] */
-  relatedProjects?: string[]
+  relatedProjects?: string[];
 
   // 元數據
   /** 圖標名稱 (FontAwesome) [可選] */
-  icon?: string
+  icon?: string;
   /** 內容語言 [可選] */
-  locale?: 'zh-TW' | 'en'
+  locale?: 'zh-TW' | 'en';
 }
 
 /**
@@ -216,29 +216,29 @@ export interface Skill {
  */
 export interface PortfolioState {
   /** 個人資料 */
-  profile: PersonalProfile
+  profile: PersonalProfile;
   /** 作品集項目列表 */
-  portfolioItems: PortfolioItem[]
+  portfolioItems: PortfolioItem[];
   /** 技能列表 */
-  skills: Skill[]
+  skills: Skill[];
   /** 當前語言設定 */
-  locale: 'zh-TW' | 'en'
+  locale: 'zh-TW' | 'en';
 }
 
 /**
  * 設備類型
  * 用於響應式設計
  */
-export type DeviceType = 'mobile' | 'tablet' | 'desktop'
+export type DeviceType = 'mobile' | 'tablet' | 'desktop';
 
 /**
  * 視口大小信息
  */
 export interface ViewportSize {
-  width: number
-  height: number
-  deviceType: DeviceType
-  isMobile: boolean
-  isTablet: boolean
-  isDesktop: boolean
+  width: number;
+  height: number;
+  deviceType: DeviceType;
+  isMobile: boolean;
+  isTablet: boolean;
+  isDesktop: boolean;
 }

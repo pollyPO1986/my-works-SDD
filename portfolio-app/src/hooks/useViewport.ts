@@ -4,9 +4,9 @@
  * 用於響應式設計決策
  */
 
-import { useState, useEffect } from 'react'
-import { DEVICE_TYPE_THRESHOLDS } from '../utils/constants'
-import type { DeviceType, ViewportSize } from '../types/models'
+import { useState, useEffect } from 'react';
+import { DEVICE_TYPE_THRESHOLDS } from '../utils/constants';
+import type { DeviceType, ViewportSize } from '../types/models';
 
 /**
  * 根據視口寬度判斷設備類型
@@ -15,12 +15,12 @@ import type { DeviceType, ViewportSize } from '../types/models'
  */
 function getDeviceType(width: number): DeviceType {
   if (width < DEVICE_TYPE_THRESHOLDS.mobile) {
-    return 'mobile'
+    return 'mobile';
   }
   if (width < DEVICE_TYPE_THRESHOLDS.tablet) {
-    return 'tablet'
+    return 'tablet';
   }
-  return 'desktop'
+  return 'desktop';
 }
 
 /**
@@ -37,9 +37,9 @@ function getDeviceType(width: number): DeviceType {
  */
 export function useViewport(): ViewportSize {
   const [viewport, setViewport] = useState<ViewportSize>(() => {
-    const width = typeof window !== 'undefined' ? window.innerWidth : 0
-    const height = typeof window !== 'undefined' ? window.innerHeight : 0
-    const deviceType = getDeviceType(width)
+    const width = typeof window !== 'undefined' ? window.innerWidth : 0;
+    const height = typeof window !== 'undefined' ? window.innerHeight : 0;
+    const deviceType = getDeviceType(width);
 
     return {
       width,
@@ -48,17 +48,17 @@ export function useViewport(): ViewportSize {
       isMobile: deviceType === 'mobile',
       isTablet: deviceType === 'tablet',
       isDesktop: deviceType === 'desktop',
-    }
-  })
+    };
+  });
 
   useEffect(() => {
     /**
      * 處理視口大小變化
      */
     function handleResize() {
-      const width = window.innerWidth
-      const height = window.innerHeight
-      const deviceType = getDeviceType(width)
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      const deviceType = getDeviceType(width);
 
       setViewport({
         width,
@@ -67,19 +67,19 @@ export function useViewport(): ViewportSize {
         isMobile: deviceType === 'mobile',
         isTablet: deviceType === 'tablet',
         isDesktop: deviceType === 'desktop',
-      })
+      });
     }
 
     // 添加監聽器
-    window.addEventListener('resize', handleResize)
+    window.addEventListener('resize', handleResize);
 
     // 清理
     return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
-  return viewport
+  return viewport;
 }
 
 /**
@@ -95,39 +95,39 @@ export function useViewport(): ViewportSize {
 export function useMediaQuery(query: string): boolean {
   const [matches, setMatches] = useState(() => {
     if (typeof window !== 'undefined') {
-      return window.matchMedia(query).matches
+      return window.matchMedia(query).matches;
     }
-    return false
-  })
+    return false;
+  });
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia(query)
+    const mediaQuery = window.matchMedia(query);
 
     /**
      * 監聽 Media Query 變化
      */
     function handleChange(e: MediaQueryListEvent) {
-      setMatches(e.matches)
+      setMatches(e.matches);
     }
 
     // 添加監聽器（支持舊版本瀏覽器）
     if (mediaQuery.addEventListener) {
-      mediaQuery.addEventListener('change', handleChange)
+      mediaQuery.addEventListener('change', handleChange);
     } else {
       // 舊版本 API
-      mediaQuery.addListener(handleChange)
+      mediaQuery.addListener(handleChange);
     }
 
     // 清理
     return () => {
       if (mediaQuery.removeEventListener) {
-        mediaQuery.removeEventListener('change', handleChange)
+        mediaQuery.removeEventListener('change', handleChange);
       } else {
         // 舊版本 API
-        mediaQuery.removeListener(handleChange)
+        mediaQuery.removeListener(handleChange);
       }
-    }
-  }, [query])
+    };
+  }, [query]);
 
-  return matches
+  return matches;
 }

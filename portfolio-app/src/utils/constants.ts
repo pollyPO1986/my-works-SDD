@@ -3,18 +3,9 @@
  * 包括 breakpoints、色彩系統、圖標對應表等
  */
 
-import {
-  faLinkedin,
-  faGithub,
-  faTwitter,
-  faEnvelope,
-} from '@fortawesome/free-brands-svg-icons'
-import {
-  faReact,
-  faNode,
-  faGit,
-} from '@fortawesome/free-brands-svg-icons'
-import type { IconDefinition } from '@fortawesome/fontawesome-svg-core'
+import { faLinkedin, faGithub, faTwitter, faEnvelope } from '@fortawesome/free-brands-svg-icons';
+import { faReact, faNode, faGit } from '@fortawesome/free-brands-svg-icons';
+import type { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
 /**
  * 響應式設計斷點
@@ -27,7 +18,7 @@ export const BREAKPOINTS = {
   lg: 1024,
   xl: 1280,
   '2xl': 1536,
-} as const
+} as const;
 
 /**
  * 設備類型判斷邏輯
@@ -37,7 +28,7 @@ export const DEVICE_TYPE_THRESHOLDS = {
   mobile: BREAKPOINTS.md,
   tablet: BREAKPOINTS.lg,
   desktop: BREAKPOINTS.xl,
-} as const
+} as const;
 
 /**
  * 色彩系統
@@ -60,7 +51,7 @@ export const COLORS = {
   slate700: '#334155',
   slate800: '#1e293b',
   slate900: '#0f172a',
-} as const
+} as const;
 
 /**
  * 間距單位
@@ -75,7 +66,7 @@ export const SPACING = {
   '2xl': '3rem', // 48px
   '3xl': '4rem', // 64px
   '4xl': '6rem', // 96px
-} as const
+} as const;
 
 /**
  * 字體大小
@@ -90,7 +81,7 @@ export const FONT_SIZES = {
   '3xl': '1.875rem', // 30px
   '4xl': '2.25rem', // 36px
   '5xl': '3rem', // 48px
-} as const
+} as const;
 
 /**
  * 社群平台圖標映射表
@@ -101,7 +92,7 @@ export const SOCIAL_PLATFORM_ICONS: Record<string, IconDefinition> = {
   github: faGithub,
   twitter: faTwitter,
   email: faEnvelope,
-}
+};
 
 /**
  * 技能圖標映射表
@@ -114,7 +105,7 @@ export const SKILL_ICONS: Record<string, IconDefinition> = {
   git: faGit,
   'git/github': faGit,
   github: faGit,
-}
+};
 
 /**
  * 技能分類標籤顏色
@@ -126,7 +117,7 @@ export const SKILL_CATEGORY_COLORS: Record<string, string> = {
   devops: 'bg-orange-100 text-orange-800',
   tools: 'bg-gray-100 text-gray-800',
   other: 'bg-slate-100 text-slate-800',
-}
+};
 
 /**
  * 熟練度等級標籤
@@ -136,7 +127,7 @@ export const PROFICIENCY_LEVELS = {
   Intermediate: '中級',
   Advanced: '高級',
   Expert: '專家',
-} as const
+} as const;
 
 /**
  * 項目狀態標籤
@@ -145,7 +136,7 @@ export const PROJECT_STATUS_LABELS: Record<string, string> = {
   active: '進行中',
   archived: '已歸檔',
   'in-progress': '開發中',
-}
+};
 
 /**
  * 動畫持續時間
@@ -155,7 +146,7 @@ export const ANIMATION_DURATIONS = {
   normal: '300ms',
   slow: '500ms',
   slower: '750ms',
-} as const
+} as const;
 
 /**
  * Z-index 層級
@@ -168,12 +159,12 @@ export const Z_INDEX = {
   modal: 400,
   popover: 500,
   tooltip: 600,
-} as const
+} as const;
 
 /**
  * 最大容器寬度
  */
-export const MAX_CONTAINER_WIDTH = 1280
+export const MAX_CONTAINER_WIDTH = 1280;
 
 /**
  * 每頁顯示的項目數
@@ -181,12 +172,12 @@ export const MAX_CONTAINER_WIDTH = 1280
 export const ITEMS_PER_PAGE = {
   portfolio: 5,
   skills: 10,
-}
+};
 
 /**
  * 首頁精選作品數
  */
-export const FEATURED_ITEMS_COUNT = 5
+export const FEATURED_ITEMS_COUNT = 5;
 
 /**
  * API 相關常數（如果有後端連接）
@@ -196,13 +187,13 @@ export const API_ENDPOINTS = {
   portfolio: '/api/portfolio',
   skills: '/api/skills',
   profile: '/api/profile',
-}
+};
 
 /**
  * 語言配置
  */
-export const SUPPORTED_LOCALES = ['zh-TW', 'en'] as const
-export const DEFAULT_LOCALE = 'zh-TW' as const
+export const SUPPORTED_LOCALES = ['zh-TW', 'en'] as const;
+export const DEFAULT_LOCALE = 'zh-TW' as const;
 
 /**
  * 無障礙 ARIA 相關常數
@@ -215,4 +206,4 @@ export const ARIA_LABELS = {
   downloadCV: '下載 CV',
   visitWebsite: '訪問網站',
   viewRepository: '查看代碼',
-}
+};

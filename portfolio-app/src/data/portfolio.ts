@@ -4,7 +4,7 @@
  * 以 TypeScript 對象形式版本控制，支持多語言
  */
 
-import type { PersonalProfile, PortfolioItem, Skill } from '../types/models'
+import type { PersonalProfile, PortfolioItem, Skill } from '../types/models';
 
 /**
  * 個人資料
@@ -29,7 +29,7 @@ export const personalProfile: PersonalProfile = {
   ],
   updatedAt: new Date('2025-12-22'),
   locale: 'zh-TW',
-}
+};
 
 /**
  * 作品集項目列表
@@ -154,7 +154,7 @@ export const portfolioItems: PortfolioItem[] = [
     status: 'active',
     locale: 'zh-TW',
   },
-]
+];
 
 /**
  * 技能列表
@@ -289,11 +289,11 @@ export const skills: Skill[] = [
     proficiency: 'Advanced',
     locale: 'zh-TW',
   },
-]
+];
 
 // 導出預設數據集
 export const portfolioData = {
   personalProfile,
   portfolioItems,
   skills,
-}
+};

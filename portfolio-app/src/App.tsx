@@ -3,7 +3,7 @@
  * 職責：載入數據、管理全局狀態、組織主要佈局
  */
 
-import './App.css'
+import './App.css';
 
 /**
  * 根應用組件
@@ -22,9 +22,7 @@ function App(): JSX.Element {
       <header className="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
         <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
           {/* 品牌 Logo */}
-          <div className="text-xl font-bold text-slate-900">
-            李昱琨
-          </div>
+          <div className="text-xl font-bold text-slate-900">李昱琨</div>
 
           {/* 導航連結 */}
           <ul className="hidden md:flex gap-8">
@@ -37,10 +35,7 @@ function App(): JSX.Element {
               </a>
             </li>
             <li>
-              <a
-                href="#skills"
-                className="text-slate-600 hover:text-primary-600 transition-colors"
-              >
+              <a href="#skills" className="text-slate-600 hover:text-primary-600 transition-colors">
                 技能
               </a>
             </li>
@@ -55,10 +50,7 @@ function App(): JSX.Element {
           </ul>
 
           {/* 移動端菜單按鈕 */}
-          <button
-            className="md:hidden text-slate-600 hover:text-slate-900"
-            aria-label="打開菜單"
-          >
+          <button className="md:hidden text-slate-600 hover:text-slate-900" aria-label="打開菜單">
             ☰
           </button>
         </nav>
@@ -76,7 +68,8 @@ function App(): JSX.Element {
             <h1 className="text-4xl font-bold text-slate-900">李昱琨</h1>
             <p className="text-xl text-slate-600">前端工程師 | React 專家</p>
             <p className="text-base text-slate-700 leading-relaxed max-w-prose">
-              熱情的 React 和 TypeScript 開發者，擁有 5 年前端工程經驗。專注於構建高性能、可訪問性強的用戶界面。喜歡開源貢獻和技術寫作。
+              熱情的 React 和 TypeScript 開發者，擁有 5
+              年前端工程經驗。專注於構建高性能、可訪問性強的用戶界面。喜歡開源貢獻和技術寫作。
             </p>
             <div className="flex gap-4 pt-4">
               <a
@@ -119,12 +112,8 @@ function App(): JSX.Element {
                   項目 {i} 圖片
                 </div>
                 <div className="p-4">
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">
-                    項目標題 {i}
-                  </h3>
-                  <p className="text-sm text-slate-600 mb-4">
-                    項目簡介文字...
-                  </p>
+                  <h3 className="text-lg font-bold text-slate-900 mb-2">項目標題 {i}</h3>
+                  <p className="text-sm text-slate-600 mb-4">項目簡介文字...</p>
                   <div className="flex gap-2 flex-wrap">
                     <span className="px-2 py-1 bg-primary-100 text-primary-700 rounded text-xs">
                       React
@@ -175,9 +164,7 @@ function App(): JSX.Element {
 
         {/* 號召性用語 */}
         <section id="contact" className="py-12 text-center bg-primary-50 rounded-lg">
-          <h2 className="text-3xl font-bold text-slate-900 mb-4">
-            讓我們合作
-          </h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-4">讓我們合作</h2>
           <p className="text-lg text-slate-600 mb-6 max-w-prose mx-auto">
             有任何合作、問題或建議？歡迎通過社群媒體聯繫我！
           </p>
@@ -207,9 +194,7 @@ function App(): JSX.Element {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <div>
               <h3 className="text-lg font-bold mb-4">李昱琨</h3>
-              <p className="text-slate-300">
-                前端工程師 | React 專家 | 開源貢獻者
-              </p>
+              <p className="text-slate-300">前端工程師 | React 專家 | 開源貢獻者</p>
             </div>
             <div>
               <h3 className="text-lg font-bold mb-4">快速連結</h3>
@@ -258,15 +243,12 @@ function App(): JSX.Element {
             </div>
           </div>
           <div className="border-t border-slate-700 pt-8 text-center text-slate-300">
-            <p>
-              © 2025 李昱琨. Built with React + TypeScript + Vite +
-              tailwindCSS
-            </p>
+            <p>© 2025 李昱琨. Built with React + TypeScript + Vite + tailwindCSS</p>
           </div>
         </div>
       </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
