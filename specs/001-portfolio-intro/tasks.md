@@ -527,7 +527,7 @@ Phase 2.5 (Polish & Deploy)
   - 進行屏幕閱讀器測試（NVDA、JAWS）
   - 生成無障礙合規報告 [ACCESSIBILITY_AUDIT.md]
 
-- [ ] T063 [P] SEO 優化和元數據：
+- [x] T063 [P] SEO 優化和元數據：
 
   - 添加頁面元標籤（title、description、og:_、twitter:_）
   - 使用 React Helmet 管理 HTML 頭部
@@ -535,7 +535,7 @@ Phase 2.5 (Polish & Deploy)
   - 建立 sitemap.xml 和 robots.txt
   - 驗證 Open Graph 分享卡片 [public/robots.txt, public/sitemap.xml]
 
-- [ ] T064 [P] 文檔完成：
+- [x] T064 [P] 文檔完成：
 
   - 編寫 README.md，包含項目概述、技術棧、安裝說明、開發指南
   - 編寫 CONTRIBUTING.md，定義代碼貢獻規範
@@ -544,7 +544,7 @@ Phase 2.5 (Polish & Deploy)
   - 添加 JSDoc 註釋到所有公共函數和組件 [README.md, CONTRIBUTING.md,
     DEPLOYMENT.md, ARCHITECTURE.md]
 
-- [ ] T065 [P] 配置部署流程：
+- [x] T065 [P] 配置部署流程：
 
   - 創建 `.github/workflows/deploy.yml`（GitHub Actions），自動構建和部署到
     GitHub Pages
@@ -552,7 +552,7 @@ Phase 2.5 (Polish & Deploy)
   - 設置 `vite.config.ts` 的 base 路徑（如需要）
   - 驗證部署後的應用在 GitHub Pages 上正常運行 [.github/workflows/deploy.yml]
 
-- [ ] T066 [P] 最終檢查和發布：
+- [x] T066 [P] 最終檢查和發布：
   - 執行完整的回歸測試（npm run test，覆蓋率 ≥ 80%）
   - 驗證所有代碼遵循 ESLint 規則（npm run lint）
   - 代碼格式化（npm run format）

@@ -132,9 +132,7 @@ export default function PortfolioDetail(): ReactElement {
                 </span>
               )}
               {project.status && (
-                <span>
-                  🔴 狀態: {project.status === 'active' ? '進行中' : project.status}
-                </span>
+                <span>🔴 狀態: {project.status === 'active' ? '進行中' : project.status}</span>
               )}
             </div>
 

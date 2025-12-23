@@ -20,7 +20,7 @@
 ### 測試場景 1: 無效 src URL
 
 ```typescript
-<ProjectImage 
+<ProjectImage
   src="https://invalid-domain-12345.com/image.jpg"
   alt="Project thumbnail"
   fallback="/images/fallback-project.png"
@@ -46,7 +46,7 @@ const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
   }
 };
 
-<img 
+<img
   src={src}
   alt={alt}
   onError={handleImageError}
@@ -94,7 +94,7 @@ const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
 ### 測試場景 3: CORS 錯誤 (Cross-Origin)
 
 ```typescript
-<ProjectImage 
+<ProjectImage
   src="https://different-domain.com/image.jpg"
   // 缺少 CORS header: Access-Control-Allow-Origin
   alt="Project"
@@ -126,7 +126,7 @@ const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
 ### 測試場景 4: 404 Not Found
 
 ```typescript
-<ProjectImage 
+<ProjectImage
   src="https://example.com/images/non-existent.jpg"
   // 服務器返回 404
   alt="Missing project image"
@@ -159,7 +159,7 @@ const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
 ### 測試場景 5: Fallback 圖片也失敗
 
 ```typescript
-<ProjectImage 
+<ProjectImage
   src="https://invalid.com/image.jpg"
   fallback="https://also-invalid.com/fallback.jpg"
   alt="Image unavailable"
@@ -178,7 +178,7 @@ const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
 ```typescript
 const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
   const img = e.currentTarget as HTMLImageElement;
-  
+
   // 只嘗試一次 fallback，避免無限迴圈
   if (img.src !== fallback && fallback) {
     img.src = fallback;
@@ -282,7 +282,7 @@ Chrome DevTools 步驟:
 ### 無圖片時的可訪問性
 
 ```typescript
-<ProjectImage 
+<ProjectImage
   src="https://invalid.com/image.jpg"
   alt="React Project - Portfolio Application"
   fallback={undefined} // 無 fallback
@@ -300,7 +300,7 @@ Chrome DevTools 步驟:
 
 ```html
 <!-- 期望 HTML -->
-<img 
+<img
   src="https://invalid.com/image.jpg"
   alt="React Project - Portfolio Application"
   loading="lazy"
@@ -359,7 +359,7 @@ Throttle: Slow 3G
 ### 無效 fallback 屬性
 
 ```typescript
-<ProjectImage 
+<ProjectImage
   src="https://invalid.com/image.jpg"
   fallback={null}  // 類型錯誤
 />
@@ -377,14 +377,14 @@ Throttle: Slow 3G
 // 如果圖片加載重新觸發（unlikely）
 // 應防止無限迴圈
 
-const handleImageError = (e) => {
+const handleImageError = e => {
   const img = e.currentTarget;
-  
+
   // 防衛：檢查是否已經是 fallback
   if (img.src === fallback) {
     return; // 避免再次嘗試
   }
-  
+
   if (fallback) {
     img.src = fallback;
   }
@@ -415,7 +415,7 @@ const handleImageError = (e) => {
 ```typescript
 const DEFAULT_PROJECT_FALLBACK = '/images/project-placeholder.png';
 
-<ProjectImage 
+<ProjectImage
   src={project.thumbnail}
   fallback={project.fallbackImage || DEFAULT_PROJECT_FALLBACK}
   alt={project.title}
@@ -435,7 +435,7 @@ const DEFAULT_PROJECT_FALLBACK = '/images/project-placeholder.png';
 ### 3. Lazy Loading 使用
 
 ```typescript
-<ProjectImage 
+<ProjectImage
   src={...}
   loading="lazy"  // 默認延遲加載
   eager={false}   // 或 eager 優先加載（hero 圖片）
@@ -459,4 +459,3 @@ const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
 - **日期**: 2025-12-22
 - **測試場景**: 5+ 圖片失敗情況
 - **結果**: ✅ 通過 (100% 容錯)
-

@@ -23,7 +23,8 @@ export default function PortfolioAll(): ReactElement {
       id: 'proj-001',
       title: '個人作品集網站',
       description: '使用 React 18 + TypeScript 構建的現代化個人作品集',
-      thumbnail: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=337&fit=crop',
+      thumbnail:
+        'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=337&fit=crop',
       featured: true,
       order: 1,
       projectUrl: 'https://portfolio.example.com',
@@ -34,7 +35,8 @@ export default function PortfolioAll(): ReactElement {
       id: 'proj-002',
       title: '電商平台前端',
       description: '為中小企業開發的電商平台前端',
-      thumbnail: 'https://images.unsplash.com/photo-1460925895917-aaf4a91ee0a4?w=600&h=337&fit=crop',
+      thumbnail:
+        'https://images.unsplash.com/photo-1460925895917-aaf4a91ee0a4?w=600&h=337&fit=crop',
       featured: true,
       order: 2,
       projectUrl: 'https://ecommerce-demo.vercel.app',
@@ -45,7 +47,8 @@ export default function PortfolioAll(): ReactElement {
       id: 'proj-003',
       title: '實時聊天應用',
       description: '基於 WebSocket 的實時聊天應用',
-      thumbnail: 'https://images.unsplash.com/photo-1516321318423-f06f70d504f0?w=600&h=337&fit=crop',
+      thumbnail:
+        'https://images.unsplash.com/photo-1516321318423-f06f70d504f0?w=600&h=337&fit=crop',
       featured: true,
       order: 3,
       projectUrl: 'https://chat-app-demo.vercel.app',
@@ -78,7 +81,8 @@ export default function PortfolioAll(): ReactElement {
       id: 'proj-006',
       title: '社群媒體管理工具',
       description: '多平台社群媒體內容管理和發布工具',
-      thumbnail: 'https://images.unsplash.com/photo-1611532736579-6b16e2b50449?w=600&h=337&fit=crop',
+      thumbnail:
+        'https://images.unsplash.com/photo-1611532736579-6b16e2b50449?w=600&h=337&fit=crop',
       featured: false,
       order: 6,
       projectUrl: 'https://social-tool-demo.vercel.app',
@@ -89,7 +93,8 @@ export default function PortfolioAll(): ReactElement {
       id: 'proj-007',
       title: '天氣預報應用',
       description: '實時天氣預報和天氣趨勢分析',
-      thumbnail: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=337&fit=crop',
+      thumbnail:
+        'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=337&fit=crop',
       featured: false,
       order: 7,
       projectUrl: 'https://weather-app-demo.vercel.app',
@@ -118,24 +123,19 @@ export default function PortfolioAll(): ReactElement {
   const itemsPerPage = 6;
 
   // 獲取所有獨特的技術標籤用於篩選
-  const allTags = Array.from(
-    new Set(allProjects.flatMap((p) => p.tags))
-  ).sort();
+  const allTags = Array.from(new Set(allProjects.flatMap(p => p.tags))).sort();
 
   // 篩選和排序邏輯
   const filteredProjects = allProjects
-    .filter((project) => {
+    .filter(project => {
       // 搜索篩選
       const matchesSearch =
         project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         project.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        project.tags.some((tag) =>
-          tag.toLowerCase().includes(searchQuery.toLowerCase())
-        );
+        project.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
 
       // 分類篩選
-      const matchesCategory =
-        filterCategory === 'all' || project.tags.includes(filterCategory);
+      const matchesCategory = filterCategory === 'all' || project.tags.includes(filterCategory);
 
       return matchesSearch && matchesCategory;
     })
@@ -154,10 +154,7 @@ export default function PortfolioAll(): ReactElement {
   // 分頁邏輯
   const totalPages = Math.ceil(filteredProjects.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
-  const paginatedProjects = filteredProjects.slice(
-    startIndex,
-    startIndex + itemsPerPage
-  );
+  const paginatedProjects = filteredProjects.slice(startIndex, startIndex + itemsPerPage);
 
   const navLinks = [
     { label: 'Home', href: '#home' },
@@ -181,9 +178,7 @@ export default function PortfolioAll(): ReactElement {
         <section className="bg-white border-b border-gray-200 py-12 px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-6xl">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">完整作品集</h1>
-            <p className="text-lg text-gray-600">
-              展示我在過去幾年開發的所有項目和案例研究。
-            </p>
+            <p className="text-lg text-gray-600">展示我在過去幾年開發的所有項目和案例研究。</p>
           </div>
         </section>
 
@@ -196,7 +191,7 @@ export default function PortfolioAll(): ReactElement {
                 type="text"
                 placeholder="搜索項目名稱、描述或技術..."
                 value={searchQuery}
-                onChange={(e) => {
+                onChange={e => {
                   setSearchQuery(e.target.value);
                   setCurrentPage(1); // 重置分頁
                 }}
@@ -208,12 +203,10 @@ export default function PortfolioAll(): ReactElement {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {/* 排序下拉菜單 */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  排序方式
-                </label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">排序方式</label>
                 <select
                   value={sortBy}
-                  onChange={(e) => {
+                  onChange={e => {
                     setSortBy(e.target.value as 'date' | 'name' | 'trending');
                     setCurrentPage(1);
                   }}
@@ -227,19 +220,17 @@ export default function PortfolioAll(): ReactElement {
 
               {/* 分類篩選 */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  技術分類
-                </label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">技術分類</label>
                 <select
                   value={filterCategory}
-                  onChange={(e) => {
+                  onChange={e => {
                     setFilterCategory(e.target.value);
                     setCurrentPage(1);
                   }}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
                   <option value="all">全部技術</option>
-                  {allTags.map((tag) => (
+                  {allTags.map(tag => (
                     <option key={tag} value={tag}>
                       {tag}
                     </option>
@@ -263,7 +254,7 @@ export default function PortfolioAll(): ReactElement {
             {paginatedProjects.length > 0 ? (
               <>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {paginatedProjects.map((project) => (
+                  {paginatedProjects.map(project => (
                     <PortfolioCard
                       key={project.id}
                       project={project}
@@ -284,7 +275,7 @@ export default function PortfolioAll(): ReactElement {
                       上一頁
                     </button>
 
-                    {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                    {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
                       <button
                         key={page}
                         onClick={() => setCurrentPage(page)}
@@ -299,9 +290,7 @@ export default function PortfolioAll(): ReactElement {
                     ))}
 
                     <button
-                      onClick={() =>
-                        setCurrentPage(Math.min(totalPages, currentPage + 1))
-                      }
+                      onClick={() => setCurrentPage(Math.min(totalPages, currentPage + 1))}
                       disabled={currentPage === totalPages}
                       className="px-4 py-2 border border-gray-300 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50"
                     >
@@ -312,12 +301,8 @@ export default function PortfolioAll(): ReactElement {
               </>
             ) : (
               <div className="text-center py-20">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  未找到匹配的項目
-                </h3>
-                <p className="text-gray-600 mb-6">
-                  嘗試調整搜索條件或篩選器。
-                </p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">未找到匹配的項目</h3>
+                <p className="text-gray-600 mb-6">嘗試調整搜索條件或篩選器。</p>
                 <button
                   onClick={() => {
                     setSearchQuery('');

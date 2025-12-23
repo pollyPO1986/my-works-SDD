@@ -1,9 +1,11 @@
 import type { ReactElement } from 'react';
+import { useEffect } from 'react';
 import { Navigation } from '../components/Navigation';
 import { Header } from '../components/Header';
 import { ProfileCard } from '../components/ProfileCard';
 import { PortfolioSection } from '../components/PortfolioSection';
 import type { PersonalProfile, PortfolioItem } from '../types/models';
+import { updateSEO, createPersonSchema } from '../utils/seo';
 
 /**
  * Home Page - 整合所有 US1 個人資料卡組件的首頁
@@ -12,6 +14,11 @@ import type { PersonalProfile, PortfolioItem } from '../types/models';
  * 1. Navigation - 固定頂部導航，包含品牌、連結、進度條和移動菜單
  * 2. Header - 歡迎區域，個人簡介和號召性用語
  * 3. ProfileCard - 個人資料卡，包含頭像、社群連結和 CV 下載
+ *
+ * SEO 優化：
+ * - 動態元標籤管理（標題、描述、Open Graph、Twitter Card）
+ * - Schema.org 結構化數據
+ * - Canonical URL 設置
  */
 export default function Home(): ReactElement {
   /**
@@ -49,6 +56,44 @@ export default function Home(): ReactElement {
   };
 
   /**
+   * 設置 SEO 優化
+   * 在組件掛載時運行，設置元標籤和結構化數據
+   */
+  useEffect(() => {
+    // 設置基本的 SEO 元數據
+    updateSEO(
+      {
+        title: 'Lee Uki | Full Stack Developer Portfolio',
+        description:
+          '個人作品集網站。展示 Full Stack 開發技能，包括 React、TypeScript、Node.js 和現代 Web 應用開發經驗。',
+        keywords: [
+          'portfolio',
+          'developer',
+          'React',
+          'TypeScript',
+          'Full Stack',
+          'Web Development',
+        ],
+        ogImage: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Lee&size=1200',
+        ogUrl: 'https://leeuki.com',
+        canonicalUrl: 'https://leeuki.com/',
+        author: 'Lee Uki',
+        twitterHandle: '@leeuki',
+        publishedDate: new Date('2024-01-15').toISOString(),
+        modifiedDate: new Date().toISOString(),
+      },
+      // 結構化數據
+      [
+        createPersonSchema(profile.name, profile.title, profile.avatar, 'https://leeuki.com', [
+          'https://linkedin.com/in/example',
+          'https://github.com/example',
+          'https://twitter.com/example',
+        ]),
+      ]
+    );
+  }, [profile.name, profile.title, profile.avatar]);
+
+  /**
    * 導航連結數據
    */
   const navLinks = [
@@ -67,7 +112,8 @@ export default function Home(): ReactElement {
       id: 'proj-001',
       title: '個人作品集網站',
       description: '使用 React 18 + TypeScript 構建的現代化個人作品集，展示前端開發技能。',
-      thumbnail: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=337&fit=crop',
+      thumbnail:
+        'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=337&fit=crop',
       featured: true,
       order: 1,
       projectUrl: 'https://portfolio.example.com',
@@ -78,7 +124,8 @@ export default function Home(): ReactElement {
       id: 'proj-002',
       title: '電商平台前端',
       description: '為中小企業開發的電商平台前端，支持商品展示、購物車和支付集成。',
-      thumbnail: 'https://images.unsplash.com/photo-1460925895917-aaf4a91ee0a4?w=600&h=337&fit=crop',
+      thumbnail:
+        'https://images.unsplash.com/photo-1460925895917-aaf4a91ee0a4?w=600&h=337&fit=crop',
       featured: true,
       order: 2,
       projectUrl: 'https://ecommerce-demo.vercel.app',
@@ -89,7 +136,8 @@ export default function Home(): ReactElement {
       id: 'proj-003',
       title: '實時聊天應用',
       description: '基於 WebSocket 的實時聊天應用，支持一對一消息、群組聊天和通知推送。',
-      thumbnail: 'https://images.unsplash.com/photo-1516321318423-f06f70d504f0?w=600&h=337&fit=crop',
+      thumbnail:
+        'https://images.unsplash.com/photo-1516321318423-f06f70d504f0?w=600&h=337&fit=crop',
       featured: true,
       order: 3,
       projectUrl: 'https://chat-app-demo.vercel.app',

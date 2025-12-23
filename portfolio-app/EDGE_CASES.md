@@ -22,7 +22,7 @@
 #### 超小圖片 (100x56px)
 
 ```typescript
-<ProjectImage 
+<ProjectImage
   src="small.jpg"
   alt="Very small image"
   className="w-full"
@@ -36,7 +36,7 @@
 #### 超大圖片 (6000x3375px)
 
 ```typescript
-<ProjectImage 
+<ProjectImage
   src="huge.jpg"
   alt="Very large image"
   className="w-full"
@@ -51,7 +51,7 @@
 
 ```typescript
 // 超寬 (32:9)
-<ProjectImage 
+<ProjectImage
   src="ultrawide.jpg"
   alt="Ultra wide image"
 />
@@ -65,7 +65,7 @@
 #### 非常長的 alt 文字
 
 ```typescript
-<ProjectImage 
+<ProjectImage
   alt="This is an extremely long and detailed description of the image that spans multiple words and is designed to test how the component handles very long accessibility text without causing layout issues"
 />
 ```
@@ -269,7 +269,7 @@ const project = { /* 缺少 featured 屬性 */ };
 
 ```typescript
 const project = {
-  repositoryUrl: "https://github.com/...",
+  repositoryUrl: 'https://github.com/...',
   projectUrl: undefined,
 };
 ```
@@ -282,7 +282,7 @@ const project = {
 
 ```typescript
 const project = {
-  projectUrl: "https://...",
+  projectUrl: 'https://...',
   repositoryUrl: undefined,
 };
 ```
@@ -308,8 +308,8 @@ const project = {
 
 ```typescript
 const project = {
-  projectUrl: "not-a-valid-url",
-  repositoryUrl: "also-not-valid",
+  projectUrl: 'not-a-valid-url',
+  repositoryUrl: 'also-not-valid',
 };
 ```
 
@@ -321,7 +321,7 @@ const project = {
 
 ```typescript
 const project = {
-  projectUrl: "https://example.com/" + "a".repeat(5000),
+  projectUrl: 'https://example.com/' + 'a'.repeat(5000),
 };
 ```
 
@@ -348,7 +348,7 @@ const project = {
 
 ```typescript
 const project = {
-  tags: Array.from({ length: 50 }, (_, i) => `Tag-${i+1}`),
+  tags: Array.from({ length: 50 }, (_, i) => `Tag-${i + 1}`),
 };
 ```
 
@@ -580,4 +580,3 @@ const items = [
 - **日期**: 2025-12-22
 - **測試範圍**: 12+ 邊界情況
 - **結果**: ✅ 通過
-

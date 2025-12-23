@@ -1,7 +1,10 @@
 {
   "name": "portfolio-app",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Lee Uki's personal portfolio website built with React, TypeScript, and Tailwind CSS",
+  "author": "Lee Uki",
+  "homepage": "https://leeuki.com/",
   "type": "module",
   "scripts": {
     "dev": "vite",

@@ -16,12 +16,12 @@
 
 /**
  * 實現示例 (使用 React Router v6+):
- * 
+ *
  * import { createBrowserRouter } from 'react-router-dom';
  * import Home from './pages/Home';
  * import PortfolioAll from './pages/PortfolioAll';
  * import PortfolioDetail from './pages/PortfolioDetail';
- * 
+ *
  * export const router = createBrowserRouter([
  *   {
  *     path: '/',
@@ -73,12 +73,11 @@ export const routeConfigs: RouteConfig[] = [
 
 // 輔助函數：獲取路由標簽
 export function getRouteLabel(pathname: string): string {
-  const config = routeConfigs.find((r) => r.path === pathname || r.path.includes(':'));
+  const config = routeConfigs.find(r => r.path === pathname || r.path.includes(':'));
   return config?.label || '未知頁面';
 }
 
 // 輔助函數：檢查路由是否有效
 export function isValidRoute(pathname: string): boolean {
-  return routeConfigs.some((r) => r.path === pathname || r.path.includes(':'));
+  return routeConfigs.some(r => r.path === pathname || r.path.includes(':'));
 }
-

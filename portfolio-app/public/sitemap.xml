@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- 首頁 -->
+  <url>
+    <loc>https://leeuki.com/</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- 作品集首頁 -->
+  <url>
+    <loc>https://leeuki.com/#portfolio</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 完整作品集 -->
+  <url>
+    <loc>https://leeuki.com/portfolio</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 個別項目示例 -->
+  <url>
+    <loc>https://leeuki.com/portfolio/proj-001</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&amp;h=337&amp;fit=crop</image:loc>
+      <image:title>個人作品集網站</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://leeuki.com/portfolio/proj-002</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1460925895917-aaf4a91ee0a4?w=600&amp;h=337&amp;fit=crop</image:loc>
+      <image:title>電商平台前端</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://leeuki.com/portfolio/proj-003</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1516321318423-f06f70d504f0?w=600&amp;h=337&amp;fit=crop</image:loc>
+      <image:title>實時聊天應用</image:title>
+    </image:image>
+  </url>
+</urlset>
