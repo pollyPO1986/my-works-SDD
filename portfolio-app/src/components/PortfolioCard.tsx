@@ -10,35 +10,35 @@
  * />
  */
 
-import type { ReactElement } from 'react'
-import { ProjectImage } from './ProjectImage'
-import { ProjectTags } from './ProjectTags'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
-import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
-import type { PortfolioItem } from '../types/models'
+import type { ReactElement } from 'react';
+import { ProjectImage } from './ProjectImage';
+import { ProjectTags } from './ProjectTags';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import type { PortfolioItem } from '../types/models';
 
 export interface PortfolioCardProps {
   /**
    * 項目資料對象
    */
-  project: PortfolioItem
+  project: PortfolioItem;
 
   /**
    * 點擊卡片時的回調
    */
-  onClick?: (project: PortfolioItem) => void
+  onClick?: (project: PortfolioItem) => void;
 
   /**
    * 是否在卡片頂部顯示「精選」標籤
    * @default true（當 project.featured 為 true 時）
    */
-  showFeaturedBadge?: boolean
+  showFeaturedBadge?: boolean;
 
   /**
    * CSS className 附加類名
    */
-  className?: string
+  className?: string;
 }
 
 /**
@@ -60,18 +60,18 @@ export function PortfolioCard({
   className = '',
 }: PortfolioCardProps): ReactElement {
   const handleCardClick = (): void => {
-    onClick?.(project)
+    onClick?.(project);
     if (project.projectUrl) {
-      window.open(project.projectUrl, '_blank', 'noopener,noreferrer')
+      window.open(project.projectUrl, '_blank', 'noopener,noreferrer');
     }
-  }
+  };
 
   const handleKeyDown = (e: React.KeyboardEvent): void => {
     if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault()
-      handleCardClick()
+      e.preventDefault();
+      handleCardClick();
     }
-  }
+  };
 
   return (
     <article
@@ -114,18 +114,11 @@ export function PortfolioCard({
         </h3>
 
         {/* 簡介 */}
-        <p className="text-sm text-gray-600 line-clamp-2 flex-grow">
-          {project.description}
-        </p>
+        <p className="text-sm text-gray-600 line-clamp-2 flex-grow">{project.description}</p>
 
         {/* 技術標籤 */}
         {project.tags && project.tags.length > 0 && (
-          <ProjectTags
-            tags={project.tags}
-            maxTags={3}
-            size="sm"
-            variant="blue"
-          />
+          <ProjectTags tags={project.tags} maxTags={3} size="sm" variant="blue" />
         )}
       </div>
 
@@ -141,11 +134,7 @@ export function PortfolioCard({
             aria-label={`查看 ${project.title} 項目`}
           >
             <span>查看項目</span>
-            <FontAwesomeIcon
-              icon={faExternalLinkAlt}
-              className="h-3 w-3"
-              aria-hidden="true"
-            />
+            <FontAwesomeIcon icon={faExternalLinkAlt} className="h-3 w-3" aria-hidden="true" />
           </a>
         )}
 
@@ -158,15 +147,11 @@ export function PortfolioCard({
             className="flex items-center justify-center gap-2 rounded-md border border-gray-300 px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             aria-label={`查看 ${project.title} 的 GitHub 倉庫`}
           >
-            <FontAwesomeIcon
-              icon={faGithub}
-              className="h-4 w-4"
-              aria-hidden="true"
-            />
+            <FontAwesomeIcon icon={faGithub} className="h-4 w-4" aria-hidden="true" />
             <span className="hidden sm:inline">GitHub</span>
           </a>
         )}
       </div>
     </article>
-  )
+  );
 }

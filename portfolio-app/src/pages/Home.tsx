@@ -2,7 +2,8 @@ import type { ReactElement } from 'react';
 import { Navigation } from '../components/Navigation';
 import { Header } from '../components/Header';
 import { ProfileCard } from '../components/ProfileCard';
-import type { PersonalProfile } from '../types/models';
+import { PortfolioSection } from '../components/PortfolioSection';
+import type { PersonalProfile, PortfolioItem } from '../types/models';
 
 /**
  * Home Page - 整合所有 US1 個人資料卡組件的首頁
@@ -58,6 +59,68 @@ export default function Home(): ReactElement {
   ];
 
   /**
+   * 示例作品集項目
+   * 在實際應用中，這些數據可能來自 API 或靜態配置
+   */
+  const portfolioItems: PortfolioItem[] = [
+    {
+      id: 'proj-001',
+      title: '個人作品集網站',
+      description: '使用 React 18 + TypeScript 構建的現代化個人作品集，展示前端開發技能。',
+      thumbnail: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=337&fit=crop',
+      featured: true,
+      order: 1,
+      projectUrl: 'https://portfolio.example.com',
+      repositoryUrl: 'https://github.com/leeuki/portfolio',
+      tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
+    },
+    {
+      id: 'proj-002',
+      title: '電商平台前端',
+      description: '為中小企業開發的電商平台前端，支持商品展示、購物車和支付集成。',
+      thumbnail: 'https://images.unsplash.com/photo-1460925895917-aaf4a91ee0a4?w=600&h=337&fit=crop',
+      featured: true,
+      order: 2,
+      projectUrl: 'https://ecommerce-demo.vercel.app',
+      repositoryUrl: 'https://github.com/leeuki/ecommerce',
+      tags: ['React', 'Redux', 'Payment API', 'Responsive'],
+    },
+    {
+      id: 'proj-003',
+      title: '實時聊天應用',
+      description: '基於 WebSocket 的實時聊天應用，支持一對一消息、群組聊天和通知推送。',
+      thumbnail: 'https://images.unsplash.com/photo-1516321318423-f06f70d504f0?w=600&h=337&fit=crop',
+      featured: true,
+      order: 3,
+      projectUrl: 'https://chat-app-demo.vercel.app',
+      repositoryUrl: 'https://github.com/leeuki/chat-app',
+      tags: ['Node.js', 'React', 'Socket.io', 'MongoDB'],
+    },
+    {
+      id: 'proj-004',
+      title: '資料分析儀表板',
+      description: '互動式資料分析儀表板，提供實時數據可視化和深入分析功能。',
+      thumbnail: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=337&fit=crop',
+      featured: true,
+      order: 4,
+      projectUrl: 'https://dashboard-demo.vercel.app',
+      repositoryUrl: 'https://github.com/leeuki/analytics-dashboard',
+      tags: ['React', 'D3.js', 'Chart.js', 'Data Visualization'],
+    },
+    {
+      id: 'proj-005',
+      title: '行動待辦應用',
+      description: '輕量級待辦事項應用，支持離線使用、同步和本地存儲。',
+      thumbnail: 'https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=600&h=337&fit=crop',
+      featured: true,
+      order: 5,
+      projectUrl: 'https://todo-app-demo.vercel.app',
+      repositoryUrl: 'https://github.com/leeuki/todo-app',
+      tags: ['React Native', 'Redux', 'LocalStorage', 'PWA'],
+    },
+  ];
+
+  /**
    * 處理社群連結點擊事件
    */
   const handleSocialClick = (url: string): void => {
@@ -70,6 +133,15 @@ export default function Home(): ReactElement {
    */
   const handleCVDownload = (): void => {
     console.log('Downloading CV from:', profile.cvUrl);
+  };
+
+  /**
+   * 處理作品集項目卡片點擊事件
+   */
+  const handlePortfolioCardClick = (project: PortfolioItem): void => {
+    console.log('Portfolio card clicked:', project.id, project.title);
+    // 在實際應用中，可能導航到項目詳情頁
+    // router.push(`/portfolio/${project.id}`);
   };
 
   return (
@@ -98,6 +170,20 @@ export default function Home(): ReactElement {
               profile={profile}
               onSocialClick={handleSocialClick}
               onCVDownload={handleCVDownload}
+            />
+          </div>
+        </section>
+
+        {/* 精選作品集區域 */}
+        <section className="w-full bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-6xl">
+            <PortfolioSection
+              items={portfolioItems}
+              maxFeatured={5}
+              onCardClick={handlePortfolioCardClick}
+              portfolioUrl="#portfolio"
+              showViewAllLink={true}
+              emptyMessage="暫無精選項目，敬請期待。"
             />
           </div>
         </section>

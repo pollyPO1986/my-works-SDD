@@ -10,50 +10,50 @@
  * />
  */
 
-import type { ReactElement } from 'react'
-import { PortfolioCard } from './PortfolioCard'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
-import type { PortfolioItem } from '../types/models'
+import type { ReactElement } from 'react';
+import { PortfolioCard } from './PortfolioCard';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import type { PortfolioItem } from '../types/models';
 
 export interface PortfolioSectionProps {
   /**
    * 項目列表
    */
-  items: PortfolioItem[]
+  items: PortfolioItem[];
 
   /**
    * 最多顯示的精選項目數量
    * @default 5
    */
-  maxFeatured?: number
+  maxFeatured?: number;
 
   /**
    * 點擊項目卡片時的回調
    */
-  onCardClick?: (item: PortfolioItem) => void
+  onCardClick?: (item: PortfolioItem) => void;
 
   /**
    * 查看完整作品集的連結 URL
    */
-  portfolioUrl?: string
+  portfolioUrl?: string;
 
   /**
    * 是否顯示「查看完整作品集」連結
    * @default true
    */
-  showViewAllLink?: boolean
+  showViewAllLink?: boolean;
 
   /**
    * 無項目時的提示信息
    * @default '暫無作品項目'
    */
-  emptyMessage?: string
+  emptyMessage?: string;
 
   /**
    * CSS className 附加類名
    */
-  className?: string
+  className?: string;
 }
 
 /**
@@ -80,9 +80,9 @@ export function PortfolioSection({
 }: PortfolioSectionProps): ReactElement {
   // 過濾並排序項目：只顯示 featured: true，按 order 排序
   const featuredItems = items
-    .filter((item) => item.featured === true)
+    .filter(item => item.featured === true)
     .sort((a, b) => (a.order ?? 0) - (b.order ?? 0))
-    .slice(0, maxFeatured)
+    .slice(0, maxFeatured);
 
   return (
     <section
@@ -94,12 +94,8 @@ export function PortfolioSection({
       <div className="mx-auto max-w-6xl">
         {/* 標題 */}
         <div className="mb-12 text-center">
-          <h2 className="mb-4 text-4xl font-bold text-gray-900">
-            精選作品
-          </h2>
-          <p className="text-lg text-gray-600">
-            展示我最近完成的優秀項目案例
-          </p>
+          <h2 className="mb-4 text-4xl font-bold text-gray-900">精選作品</h2>
+          <p className="text-lg text-gray-600">展示我最近完成的優秀項目案例</p>
         </div>
 
         {/* 項目網格 */}
@@ -110,16 +106,9 @@ export function PortfolioSection({
               role="list"
               aria-label="項目卡片列表"
             >
-              {featuredItems.map((item) => (
-                <div
-                  key={item.id}
-                  role="listitem"
-                >
-                  <PortfolioCard
-                    project={item}
-                    onClick={onCardClick}
-                    showFeaturedBadge={true}
-                  />
+              {featuredItems.map(item => (
+                <div key={item.id} role="listitem">
+                  <PortfolioCard project={item} onClick={onCardClick} showFeaturedBadge={true} />
                 </div>
               ))}
             </div>
@@ -154,5 +143,5 @@ export function PortfolioSection({
         )}
       </div>
     </section>
-  )
+  );
 }
