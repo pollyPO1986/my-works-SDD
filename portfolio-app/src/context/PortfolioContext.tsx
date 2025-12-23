@@ -4,7 +4,7 @@
  * 便於所有組件訪問，無需逐層傳遞 props
  */
 
-import { type ReactNode } from 'react';
+import { type ReactNode, type ReactElement } from 'react';
 import type { PortfolioState } from '../types/models';
 import { PortfolioContext } from './PortfolioContextDefinition';
 import { personalProfile, portfolioItems, skills } from '../data/portfolio';
@@ -27,12 +27,12 @@ interface PortfolioProviderProps {
  * </PortfolioProvider>
  *
  * @param props 組件 props
- * @returns JSX.Element
+ * @returns ReactElement
  */
 export function PortfolioProvider({
   children,
   locale = 'zh-TW',
-}: PortfolioProviderProps): JSX.Element {
+}: PortfolioProviderProps): ReactElement {
   const value: PortfolioState = {
     profile: personalProfile,
     portfolioItems,

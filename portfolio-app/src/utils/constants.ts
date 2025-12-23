@@ -3,8 +3,9 @@
  * 包括 breakpoints、色彩系統、圖標對應表等
  */
 
-import { faLinkedin, faGithub, faTwitter, faEnvelope } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin, faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faReact, faNode, faGit } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import type { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
 /**
