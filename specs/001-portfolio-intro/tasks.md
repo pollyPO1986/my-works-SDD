@@ -327,7 +327,7 @@ Phase 2.5 (Polish & Deploy)
   - 「查看完整作品集」連結存在
     [src/components/__tests__/PortfolioSection.test.tsx]
 
-- [ ] T038 [US2] 無障礙測試：使用 axe DevTools 檢查
+- [x] T038 [US2] 無障礙測試：使用 axe DevTools 檢查
       PortfolioCard、PortfolioSection，確保：
 
   - 項目卡片有適當的 role（article 或 button）
@@ -335,59 +335,59 @@ Phase 2.5 (Polish & Deploy)
   - 色彩對比度達標（WCAG AA）
   - 鍵盤導航能訪問所有連結和按鈕文檔記錄在 [ACCESSIBILITY.md]
 
-- [ ] T039 [US2] 響應式測試：測試 PortfolioSection 在不同屏幕寬度上的布局：
+- [x] T039 [US2] 響應式測試：測試 PortfolioSection 在不同屏幕寬度上的布局：
 
   - 320px: 1 欄網格
   - 768px: 2 欄網格
   - 1024px+: 3 欄網格文檔記錄在 [RESPONSIVE_TEST.md]
 
-- [ ] T040 [US2] 性能測試：測試作品集區域的性能：
+- [x] T040 [US2] 性能測試：測試作品集區域的性能：
 
   - 圖片加載不阻塞頁面互動
   - 滾動時圖片懶加載正常進行
   - FCP 保持在 < 3 秒內文檔記錄在 [PERFORMANCE.md]
 
-- [ ] T041 [US2] 邊界情況測試：測試極端情況：
+- [x] T041 [US2] 邊界情況測試：測試極端情況：
 
   - 當沒有精選項目時，顯示適當的 fallback
   - 當項目數超過 20 個時，性能仍然良好
   - 當項目標題或簡介特別長時，文本截斷正確文檔記錄在 [EDGE_CASES.md]
 
-- [ ] T042 [US2] 圖片加載失敗測試：模擬圖片加載失敗場景：
+- [x] T042 [US2] 圖片加載失敗測試：模擬圖片加載失敗場景：
 
   - 使用 DevTools Network 限流或禁用圖片
   - 驗證 alt 文字顯示
   - 驗證頁面布局不崩潰文檔記錄在 [ERROR_HANDLING.md]
 
-- [ ] T043 [US2] 集成測試：更新 `src/pages/Home.tsx`，添加 PortfolioSection 組件
+- [x] T043 [US2] 集成測試：更新 `src/pages/Home.tsx`，添加 PortfolioSection 組件
       ，測試：
 
   - ProfileCard 和 PortfolioSection 的組合布局
   - 導航錨點連結正確指向各區域
   - 滾動到相應區域時錨點高亮
 
-- [ ] T044 [US2] 創建作品集詳情頁 `src/pages/PortfolioDetail.tsx`（可選），顯示
+- [x] T044 [US2] 創建作品集詳情頁 `src/pages/PortfolioDetail.tsx`（可選），顯示
       單個項目的完整信息：
 
   - 項目大圖展示
   - 完整描述和成果指標
   - 返回列表連結 [src/pages/PortfolioDetail.tsx]
 
-- [ ] T045 [US2] 實現完整作品集頁面 `src/pages/PortfolioAll.tsx`（可選），顯示所
+- [x] T045 [US2] 實現完整作品集頁面 `src/pages/PortfolioAll.tsx`（可選），顯示所
       有項目：
 
   - 搜索/篩選功能
   - 分頁或無限滾動
   - 排序選項（按日期、技術、評分） [src/pages/PortfolioAll.tsx]
 
-- [ ] T046 [US2] 集成路由（如使用 React Router，可選）：
+- [x] T046 [US2] 集成路由（如使用 React Router，可選）：
 
   - 配置路由文件 `src/router/routes.tsx`
   - 主頁 (/) → Home.tsx
   - 作品詳情 (/portfolio/:id) → PortfolioDetail.tsx
   - 完整作品集 (/portfolio) → PortfolioAll.tsx [src/router/routes.tsx]
 
-- [ ] T047 [US2] 實現靜態導出（如使用 vite-plugin-ssr 或構建時生成靜態 HTML）：
+- [x] T047 [US2] 實現靜態導出（如使用 vite-plugin-ssr 或構建時生成靜態 HTML）：
   - 配置 Vite 以生成靜態 HTML 文件
   - 驗證所有路由都能生成靜態頁面
   - 可部署到 GitHub Pages 或靜態託管
