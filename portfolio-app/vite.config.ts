@@ -5,10 +5,10 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
 
-  // GitHub Pages 部署配置
-  // 如果倉庫不是 <username>.github.io，需要設置 base
-  // 例如：倉庫名是 'portfolio'，則設置為 '/portfolio/'
-  base: process.env.VITE_BASE_URL || '/',
+  // 基礎路徑配置
+  // 開發環境：相對路徑 './' 方便本地測試
+  // 生產環境（GitHub Pages）：根據需要設置為 '/' 或 '/portfolio/'
+  base: process.env.VITE_BASE_URL || './',
 
   // 構建優化
   build: {
