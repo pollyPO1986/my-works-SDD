@@ -1,39 +1,41 @@
-# Implementation Plan: [FEATURE]
+# 實作計畫：[功能名稱]
 
-**Branch**: `[###-feature-name]` | **Date**: [DATE] | **Spec**: [link]
-**Input**: Feature specification from `/specs/[###-feature-name]/spec.md`
+**分支**: `[###-feature-name]` | **日期**: [日期] | **規格文件**: [連結] **輸
+入**: 來自 `/specs/[###-feature-name]/spec.md` 的功能規格
 
-**Note**: This template is filled in by the `/speckit.plan` command. See `.specify/templates/commands/plan.md` for the execution workflow.
+**注意**: 此模板由 `/speckit.plan` 命令填寫。請參閱相關執行工作流。
 
-## Summary
+## 摘要
 
-[Extract from feature spec: primary requirement + technical approach from research]
+[從功能規格中提取：主要需求 + 來自研究的技術方法]
 
-## Technical Context
+## 技術背景
 
 <!--
-  ACTION REQUIRED: Replace the content in this section with the technical details
-  for the project. The structure here is presented in advisory capacity to guide
-  the iteration process.
+  需要執行：將此部分內容替換為專案的技術細節。
+  此處的結構僅供參考，用以引導迭代過程。
 -->
 
-**Language/Version**: [e.g., Python 3.11, Swift 5.9, Rust 1.75 or NEEDS CLARIFICATION]  
-**Primary Dependencies**: [e.g., FastAPI, UIKit, LLVM or NEEDS CLARIFICATION]  
-**Storage**: [if applicable, e.g., PostgreSQL, CoreData, files or N/A]  
-**Testing**: [e.g., pytest, XCTest, cargo test or NEEDS CLARIFICATION]  
-**Target Platform**: [e.g., Linux server, iOS 15+, WASM or NEEDS CLARIFICATION]
-**Project Type**: [single/web/mobile - determines source structure]  
-**Performance Goals**: [domain-specific, e.g., 1000 req/s, 10k lines/sec, 60 fps or NEEDS CLARIFICATION]  
-**Constraints**: [domain-specific, e.g., <200ms p95, <100MB memory, offline-capable or NEEDS CLARIFICATION]  
-**Scale/Scope**: [domain-specific, e.g., 10k users, 1M LOC, 50 screens or NEEDS CLARIFICATION]
+**語言/版本**: [例如：TypeScript 5.x, React 19]  
+**主要依賴**: [例如：Tailwind CSS, Vite]  
+**儲存**: [如果適用，例如：LocalStorage, API]  
+**測試**: [例如：Vitest, React Testing Library]  
+**目標平台**: [例如：Web 瀏覽器] **專案類型**: [個人作品集網站]  
+**效能目標**: [例如：LCP < 2.5s, 互動延遲 < 100ms]  
+**約束**: [例如：必須使用正體中文撰寫所有文件]  
+**規模/範圍**: [例如：單頁應用程式, 多個作品展示]
 
-## Constitution Check
+## 章程檢查 (Constitution Check)
 
-*GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
+_門檻：必須在 Phase 0 研究之前通過。在 Phase 1 設計後再次檢查。_
 
-[Gates determined based on constitution file]
+- [ ] **程式品質**: 是否符合 ESLint/Prettier 規範？
+- [ ] **測試標準**: 是否已規劃單元/整合測試？
+- [ ] **使用者體驗一致性**: 是否遵循 Tailwind 設計規範？
+- [ ] **效能需求**: 是否考慮了資源優化與載入速度？
+- [ ] **語言規範**: 是否全部使用正體中文撰寫？
 
-## Project Structure
+## 專案結構
 
 ### Documentation (this feature)
 
@@ -48,6 +50,7 @@ specs/[###-feature]/
 ```
 
 ### Source Code (repository root)
+
 <!--
   ACTION REQUIRED: Replace the placeholder tree below with the concrete layout
   for this feature. Delete unused options and expand the chosen structure with
@@ -98,7 +101,7 @@ directories captured above]
 
 > **Fill ONLY if Constitution Check has violations that must be justified**
 
-| Violation | Why Needed | Simpler Alternative Rejected Because |
-|-----------|------------|-------------------------------------|
-| [e.g., 4th project] | [current need] | [why 3 projects insufficient] |
-| [e.g., Repository pattern] | [specific problem] | [why direct DB access insufficient] |
+| Violation                  | Why Needed         | Simpler Alternative Rejected Because |
+| -------------------------- | ------------------ | ------------------------------------ |
+| [e.g., 4th project]        | [current need]     | [why 3 projects insufficient]        |
+| [e.g., Repository pattern] | [specific problem] | [why direct DB access insufficient]  |
